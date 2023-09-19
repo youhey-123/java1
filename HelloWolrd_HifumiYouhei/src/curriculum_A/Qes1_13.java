@@ -32,8 +32,6 @@ public class Qes1_13 {
 
 		// ブーリアン型
 		boolean booleanVariable;
-		
-		
 
 		//問２
 		byteVariable = 0;
@@ -45,13 +43,13 @@ public class Qes1_13 {
 		intVariable = 0;
 
 		// 長整数型
-		longVariable = 0;
+		longVariable = 0L;
 
 		// 単精度浮動小数点数型
-		floatVariable = 0;
+		floatVariable = 0.0f;
 
 		// 倍精度浮動小数点数型
-		doubleVariable = 0;
+		doubleVariable = 0.0;
 
 		// 文字型
 		charVariable = 'a';
@@ -62,8 +60,6 @@ public class Qes1_13 {
 		// ブーリアン型
 		booleanVariable = true;
 
-		
-		
 		//問３
 		// バイト型
 		byteVariable = 10;
@@ -91,8 +87,6 @@ public class Qes1_13 {
 
 		// ブーリアン型
 		booleanVariable = true;
-		
-		
 
 		//問４
 		// 11110 (数字を全て足す)
@@ -118,17 +112,13 @@ public class Qes1_13 {
 		System.out.println(floatSum);
 
 		// -90 (10引く100をする)
-		int difference = 100 - intVariable;
-		System.out.println(-difference);
-		
-		
-
+		int result = byteVariable  - shortVariable;
+        System.out.println(result);
+        
 		//問５
 		int num1 = 20;
 		int num2 = 23;
 		System.out.println("ハローJAVA" + (num1 + num2));
-		
-		
 
 		//問６
 		String name = "山田太郎";
@@ -143,8 +133,6 @@ public class Qes1_13 {
 		System.out.println("身長は" + height + "cmです");
 		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + favoriteFood + "です");
-		
-		
 
 		//問７
 		// BMIを計算
@@ -152,8 +140,6 @@ public class Qes1_13 {
 		double bmi = weight / (heightMeters * heightMeters);
 
 		System.out.println("BMIは" + String.format("%.1f", bmi) + "です");
-		
-		
 
 		//問８
 		name = "鈴木一郎";
@@ -172,8 +158,6 @@ public class Qes1_13 {
 		bmi = weight / (heightMeters * heightMeters);
 
 		System.out.println("BMIは" + String.format("%.1f", bmi) + "です");
-		
-		
 
 		//問９
 		name = "鈴木一郎";
@@ -192,41 +176,32 @@ public class Qes1_13 {
 		bmi = weight / (heightMeters * heightMeters);
 
 		System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
-		
-		
 
 		//問１０
 		boolean age25 = (age >= 25) ? true : false;
 		System.out.println(age25);
-		
-		
 
 		//問１１
-		String output = "年齢は" + String.valueOf(age) + "歳です。" + "身長は" + String.valueOf(height) + "cmです。" + "体重は"
-				+ String.valueOf(weight) + "kgです。";
+		String sa = String.valueOf( age );
+		String sh = String.valueOf( height );
+		String sw = String.valueOf( weight );
 
-		System.out.println("初めまして" + name + "です");
-		System.out.println(output);
-		System.out.println("好きな食べ物は" + favoriteFood + "です");
-		
+		System.out.println( sa + sh + sw );
 		
 
 		//問１２
-		int ageStr = (int)age;
-        int heightStr = (int)height;
+		int ia = age;
+		int ih = (int)height;
 
-        System.out.println("年齢は" + ageStr+ "歳です。");
-        System.out.println( "身長は" + heightStr + "cmです。");
-        
-        
-        
-        //問１３
-     // 年齢が25以上または身長が160以上であるかを判定
-        boolean ageAndHeight = (age >= 25) || (height >= 160);
+		System.out.println( ia + ih );
 
-        // 条件に応じてtrueまたはfalseを出力
-        System.out.println(ageAndHeight);
-		
+		//問１３
+		// 年齢が25以上または身長が160以上であるかを判定
+		boolean ageAndHeight = (age >= 25) || (height >= 160);
+
+		// 条件に応じてtrueまたはfalseを出力
+		System.out.println(ageAndHeight);
+
 	}
 
 }
