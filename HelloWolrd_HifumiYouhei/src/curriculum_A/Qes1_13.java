@@ -7,112 +7,112 @@ public class Qes1_13 {
 
 		//問１
 		// バイト型
-		byte byteVariable;
+		byte byteVar;
 
 		// 短整数型
-		short shortVariable;
+		short shortVar;
 
 		// 整数型
-		int intVariable;
+		int intVar;
 
 		// 長整数型
-		long longVariable;
+		long longVar;
 
 		// 単精度浮動小数点数型
-		float floatVariable;
+		float floatVar;
 
 		// 倍精度浮動小数点数型
-		double doubleVariable;
+		double doubleVar;
 
 		// 文字型
-		char charVariable;
+		char charVar;
 
 		// 文字列型
-		String stringVariable;
+		String stringVar;
 
 		// ブーリアン型
-		boolean booleanVariable;
+		boolean booleanVar;
 
 		//問２
-		byteVariable = 0;
+		byteVar = 0;
 
 		// 短整数型
-		shortVariable = 0;
+		shortVar= 0;
 
 		// 整数型
-		intVariable = 0;
+		intVar = 0;
 
 		// 長整数型
-		longVariable = 0L;
+		longVar = 0L;
 
 		// 単精度浮動小数点数型
-		floatVariable = 0.0f;
+		floatVar = 0.0f;
 
 		// 倍精度浮動小数点数型
-		doubleVariable = 0.0;
+		doubleVar= 0.0;
 
 		// 文字型
-		charVariable = 'a';
+		charVar = 'a';
 
 		// 文字列型
-		stringVariable = "ハロー";
+		stringVar = "ハロー";
 
 		// ブーリアン型
-		booleanVariable = true;
+		booleanVar = true;
 
 		//問３
 		// バイト型
-		byteVariable = 10;
+		byteVar = 10;
 
 		// 短整数型
-		shortVariable = 100;
+		shortVar= 100;
 
 		// 整数型
-		intVariable = 1000;
+		intVar = 1000;
 
 		// 長整数型
-		longVariable = 10000L;
+		longVar = 10000L;
 
 		// 単精度浮動小数点数型
-		floatVariable = 9.5f;
+		floatVar = 9.5f;
 
 		// 倍精度浮動小数点数型
-		doubleVariable = 10.5;
+		doubleVar = 10.5;
 
 		// 文字型
-		charVariable = 'a';
+		charVar= 'a';
 
 		// 文字列型
-		stringVariable = "ハロー";
+		stringVar= "ハロー";
 
 		// ブーリアン型
-		booleanVariable = true;
+		booleanVar = true;
 
 		//問４
 		// 11110 (数字を全て足す)
-		int sum = byteVariable + shortVariable + intVariable + (int) longVariable;
+		int sum = byteVar + shortVar + intVar+ (int) longVar;
 		System.out.println(sum);
 
 		// 20
-		System.out.println(shortVariable);
+		System.out.println(byteVar + byteVar);
 
 		// a ハロー true
-		System.out.println(charVariable + " " + stringVariable + " " + booleanVariable);
+		System.out.println(charVar + " " + stringVar + " " + booleanVar);
 
 		// 11130 (数字を全て足す)
-		sum = byteVariable + shortVariable + intVariable + (int) longVariable + 20;
+		sum = byteVar + shortVar + intVar + (int) longVar + (int) floatVar +  (int) doubleVar;
 		System.out.println(sum);
 
 		// 10000000000 (小数点以外の数字を全てかける)
-		long longSum = byteVariable * shortVariable * intVariable * longVariable * 20L;
+		long longSum = byteVar * shortVar * intVar * longVar ;
 		System.out.println(longSum);
 
 		// 0.105 (10.5を100で割る)
-		float floatSum = (float) doubleVariable / 100;
+		float floatSum = (float) doubleVar / shortVar;
 		System.out.println(floatSum);
 
 		// -90 (10引く100をする)
-		int result = byteVariable  - shortVariable;
+		int result = byteVar  - shortVar;
         System.out.println(result);
         
 		//問５
@@ -161,19 +161,19 @@ public class Qes1_13 {
 
 		//問９
 		name = "鈴木一郎";
-		age = age + 24;
-		height = height + 168.5;
-		weight = weight + 64.2;
+		int age2 = age + age;
+		double height2 = height + height;
+		double weight2 = weight + weight;
 		favoriteFood = "オムライス";
 
 		System.out.println("初めまして" + name + "です");
-		System.out.println("年齢は" + age + "歳です");
-		System.out.println("身長は" + height + "cmです");
-		System.out.println("体重は" + weight + "kgです");
+		System.out.println("年齢は" + age2 + "歳です");
+		System.out.println("身長は" + height2 + "cmです");
+		System.out.println("体重は" + weight2 + "kgです");
 		System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-		heightMeters = height / 100;
-		bmi = weight / (heightMeters * heightMeters);
+		heightMeters = height2 / 100;
+		bmi = weight2 / (heightMeters * heightMeters);
 
 		System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
 
@@ -190,14 +190,18 @@ public class Qes1_13 {
 		
 
 		//問１２
-		int ia = age;
-		int ih = (int)height;
+		int ia = Integer.parseInt(sa);
+		double dh = Double.parseDouble(sh);
+		int ih = (int) dh; 
+
+
+
 
 		System.out.println( ia + ih );
 
 		//問１３
 		// 年齢が25以上または身長が160以上であるかを判定
-		boolean ageAndHeight = (age >= 25) || (height >= 160);
+		boolean ageAndHeight = (ia >= 25) || (ih >= 160);
 
 		// 条件に応じてtrueまたはfalseを出力
 		System.out.println(ageAndHeight);
