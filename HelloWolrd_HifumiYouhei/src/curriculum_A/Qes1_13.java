@@ -37,7 +37,7 @@ public class Qes1_13 {
 		byteVar = 0;
 
 		// 短整数型
-		shortVar= 0;
+		shortVar = 0;
 
 		// 整数型
 		intVar = 0;
@@ -49,23 +49,23 @@ public class Qes1_13 {
 		floatVar = 0.0f;
 
 		// 倍精度浮動小数点数型
-		doubleVar= 0.0;
+		doubleVar = 0.0;
 
 		// 文字型
-		charVar = 'a';
+		charVar = '\u0000';
 
 		// 文字列型
-		stringVar = "ハロー";
+		stringVar = "";
 
 		// ブーリアン型
-		booleanVar = true;
+		booleanVar = false;
 
 		//問３
 		// バイト型
 		byteVar = 10;
 
 		// 短整数型
-		shortVar= 100;
+		shortVar = 100;
 
 		// 整数型
 		intVar = 1000;
@@ -77,20 +77,20 @@ public class Qes1_13 {
 		floatVar = 9.5f;
 
 		// 倍精度浮動小数点数型
-		doubleVar = 10.5;
+		doubleVar = 10.5d;
 
 		// 文字型
-		charVar= 'a';
+		charVar = 'a';
 
 		// 文字列型
-		stringVar= "ハロー";
+		stringVar = "ハロー";
 
 		// ブーリアン型
 		booleanVar = true;
 
 		//問４
 		// 11110 (数字を全て足す)
-		int sum = byteVar + shortVar + intVar+ (int) longVar;
+		int sum = byteVar + shortVar + intVar + (int) longVar;
 		System.out.println(sum);
 
 		// 20
@@ -100,11 +100,11 @@ public class Qes1_13 {
 		System.out.println(charVar + " " + stringVar + " " + booleanVar);
 
 		// 11130 (数字を全て足す)
-		sum = byteVar + shortVar + intVar + (int) longVar + (int) floatVar +  (int) doubleVar;
+		sum = byteVar + shortVar + intVar + (int) longVar + (int) floatVar + (int) doubleVar;
 		System.out.println(sum);
 
 		// 10000000000 (小数点以外の数字を全てかける)
-		long longSum = byteVar * shortVar * intVar * longVar ;
+		long longSum = byteVar * shortVar * intVar * longVar;
 		System.out.println(longSum);
 
 		// 0.105 (10.5を100で割る)
@@ -112,9 +112,9 @@ public class Qes1_13 {
 		System.out.println(floatSum);
 
 		// -90 (10引く100をする)
-		int result = byteVar  - shortVar;
-        System.out.println(result);
-        
+		int result = byteVar - shortVar;
+		System.out.println(result);
+
 		//問５
 		int num1 = 20;
 		int num2 = 23;
@@ -161,43 +161,41 @@ public class Qes1_13 {
 
 		//問９
 		name = "鈴木一郎";
-		int age2 = age + age;
-		double height2 = height + height;
-		double weight2 = weight + weight;
+		age += age;
+		height += height;
+		weight += weight;
 		favoriteFood = "オムライス";
 
 		System.out.println("初めまして" + name + "です");
-		System.out.println("年齢は" + age2 + "歳です");
-		System.out.println("身長は" + height2 + "cmです");
-		System.out.println("体重は" + weight2 + "kgです");
+		System.out.println("年齢は" + age + "歳です");
+		System.out.println("身長は" + height + "cmです");
+		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-		heightMeters = height2 / 100;
-		bmi = weight2 / (heightMeters * heightMeters);
+		heightMeters = height / 100;
+		bmi = weight / (heightMeters * heightMeters);
 
 		System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
 
 		//問１０
-		boolean age25 = (age >= 25) ? true : false;
-		System.out.println(age25);
+		age = 24;
+		System.out.println(age >= 25);
 
 		//問１１
-		String sa = String.valueOf( age );
-		String sh = String.valueOf( height );
-		String sw = String.valueOf( weight );
+		age = 24;
+		height = 168.5;
+		weight = 64.2;
 
-		System.out.println( sa + sh + sw );
-		
+		String sa = String.valueOf(age);
+		String sh = String.valueOf(height);
+		String sw = String.valueOf(weight);
+
+		System.out.println(sa + sh + sw);
 
 		//問１２
 		int ia = Integer.parseInt(sa);
 		double dh = Double.parseDouble(sh);
-		int ih = (int) dh; 
-
-
-
-
-		System.out.println( ia + ih );
+		int ih = (int) dh;
 
 		//問１３
 		// 年齢が25以上または身長が160以上であるかを判定
@@ -207,5 +205,4 @@ public class Qes1_13 {
 		System.out.println(ageAndHeight);
 
 	}
-
 }
