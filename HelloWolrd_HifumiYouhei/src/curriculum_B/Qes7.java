@@ -21,8 +21,10 @@ public class Qes7 {
 
         // 各生徒の各科目のスコアを保存する二次元配列
         double[][] scores = new double[studentsCount][4];
+        
         // 科目名の配列
         String[] subjects = { "英語", "数学", "理科", "社会" };
+        
         // 各科目の合計スコアを保存する配列
         double[] subjectTotal = new double[4];
 
@@ -31,6 +33,7 @@ public class Qes7 {
             for (int j = 0; j < 4; j++) {
                 System.out.printf("%d人目の『%s』の点数を入力してください :", i + 1, subjects[j]);
                 scores[i][j] = scanner.nextDouble();
+                
                 // 各科目の合計スコアを更新
                 subjectTotal[j] += scores[i][j];
             }
@@ -39,6 +42,7 @@ public class Qes7 {
 
         // 全生徒の平均スコアの合計を保存する変数
         double totalAverage = 0;
+        
         // 各生徒の平均スコアを計算して出力する
         for (int i = 0; i < studentsCount; i++) {
             double studentAverage = 0;
@@ -59,5 +63,8 @@ public class Qes7 {
         // 全体の平均スコアを計算して出力する
         totalAverage /= studentsCount;
         System.out.printf("全体の平均点は%.2f点です。", totalAverage);
+        
+        // Scannerを閉じる
+        scanner.close();
     }
 }
