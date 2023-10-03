@@ -1,59 +1,59 @@
 package curriculum_B;
 
-import java.util.Random; // 乱数を生成するためのクラスをインポート
-import java.util.Scanner; // ユーザーからの入力を受け付けるためのクラスをインポート
+import java.util.Random;  // 乱数を生成するためのライブラリを利用
+import java.util.Scanner;  // ユーザーの入力を読み取るためのライブラリを利用
 
 public class Qes6 {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// Scannerクラスのインスタンスを生成。これにより、ユーザーからの入力を受け付けられるようになる。
-		Scanner scanner = new Scanner(System.in);
+        // 「Scanner」という変数タイプを使って、キーボードからの入力を受け取る準備をする
+        Scanner scanner = new Scanner(System.in);
 
-		// ユーザーに商品名の入力を促すメッセージを表示
-		System.out.print("商品を「、」区切りで入力してください: ");
+        // ユーザーにメッセージを表示
+        System.out.print("商品を「、」区切りで入力してください: ");
+        
+        // ユーザーが入力した情報を「input」という名前の変数に保存する
+        String input = scanner.nextLine();
+        
+        // 入力した商品名を「、」で区切り、それを「products」という配列に格納する
+        String[] products = input.split("、");
 
-		// ユーザーからの入力を文字列として受け取る
-		String input = scanner.nextLine();
+        // テレビの在庫数をランダムに生成し、「remainingForTV」という変数に保存
+        int remainingForTV = new Random().nextInt(12);
+        
+        // ディスプレイの在庫数は11からテレビの在庫数を引いたものを計算し、「remainingForDisplay」という変数に保存
+        int remainingForDisplay = 11 - remainingForTV;
 
-		// 「、」で区切られた文字列を配列に変換する。例: "テレビ、パソコン" -> ["テレビ", "パソコン"]
-		String[] products = input.split("、");
+        // 入力された各商品名に対して、処理を繰り返し行う
+        for (String product : products) {
 
-		// 各商品に対して処理を行う。拡張for文を使用。
-		for (String product : products) {
+            // 商品名によって処理を分岐
+            switch (product) {
 
-			// 0から11までの乱数（ランダムな数字）を生成
-			int remaining = new Random().nextInt(12);
+                case "テレビ":
+                    System.out.printf("テレビの残り台数は%d台です%n", remainingForTV);
+                    break;
 
-			// 商品名に応じて異なる処理を行う。switch文を使用。
-			switch (product) {
-			
-			// テレビまたはディスプレイの場合の処理
-			case "テレビ":
-			case "ディスプレイ":
-				
-				// 11から別のランダムな数を引く処理
-				int deducted = new Random().nextInt(12);
-				remaining = deducted < remaining ? 11 - deducted : remaining;
-				System.out.printf("テレビの残り台数は%d台です%n", remaining);
-				break;
-				
-			// その他の指定商品の場合、ランダムな残り台数をそのまま表示
-			case "パソコン":
-			case "冷蔵庫":
-			case "扇風機":
-			case "洗濯機":
-			case "加湿器":
-				System.out.printf("%sの残り台数は%d台です%n", product, remaining);
-				break;
+                case "ディスプレイ":
+                    System.out.printf("ディスプレイの残り台数は%d台です%n", remainingForDisplay);
+                    break;
+                    
+                case "パソコン":
+                case "冷蔵庫":
+                case "扇風機":
+                case "洗濯機":
+                case "加湿器":
+                    int remaining = new Random().nextInt(12);  // この商品の残り在庫をランダムに生成
+                    System.out.printf("%sの残り台数は%d台です%n", product, remaining);
+                    break;
 
-			// 上記の商品以外が入力された場合、エラーメッセージを表示
-			default:
-				System.out.printf("『 %s 』は指定の商品ではありません%n", product);
-			}
-		}
+                default:
+                    System.out.printf("『 %s 』は指定の商品ではありません%n", product);
+            }
+        }
 
-		// Scannerを閉じる
-		scanner.close();
-	}
+        // 入力の受付を終了
+        scanner.close();
+    }
 }
