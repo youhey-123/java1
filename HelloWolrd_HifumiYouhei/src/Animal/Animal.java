@@ -13,7 +13,7 @@ public class Animal {
 		 // Dogクラスのオブジェクトを作成
 		Dog dogWithName = new Dog();
 		// 作成したDogオブジェクトのnameをコンソールに表示
-		System.out.println(dogWithName.name); ; 
+		System.out.println(dogWithName.name); ;
 
 		// Q2：Dogクラスを呼び出して変数に代入し、動物の数をコンソールに出力してください。
 		
