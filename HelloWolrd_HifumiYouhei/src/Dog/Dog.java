@@ -14,7 +14,6 @@ public class Dog {
 
 	// Q4：コンストラクタで動物の数を代入
 	public Dog(int number) {
-		name = "犬";
 		count = number;
 	}
 }
