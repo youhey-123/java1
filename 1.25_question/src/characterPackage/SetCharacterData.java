@@ -3,49 +3,77 @@ package characterPackage;
 import java.util.Random;
 
 public class SetCharacterData {
-    private String name;
-    private int hp;
-    private int mp;
-    private int attack;
-    private int speed;
-    private int defense;
-    
-    // Randomインスタンスを生成してランダムな数値を作成するために使用
+    // キャラクターの名前と各ステータスのためのフィールド
+    protected String name;
+    protected int hp;
+    protected int mp;
+    protected int attack;
+    protected int speed;
+    protected int defense;
+
+    // ステータスのランダムな値を生成するためのRandomクラスのインスタンス
     private Random random = new Random();
 
-    // コンストラクタ: 名前を受け取り、それに基づいてキャラクターステータスをランダムにセット
     public SetCharacterData(String name) {
-        this.name = name; 
-        this.hp = random.nextInt(1000) + 1;
-        this.mp = random.nextInt(1000) + 1;
-        this.attack = random.nextInt(1000) + 1;
-        this.speed = random.nextInt(1000) + 1;
-        this.defense = random.nextInt(1000) + 1;
+        // 名前をフィールドにセット
+        setName(name);
+
+        // 各ステータスを1から1000の範囲でランダムにセット
+        setHp(random.nextInt(1000) + 1);
+        setMp(random.nextInt(1000) + 1);
+        setAttack(random.nextInt(1000) + 1);
+        setSpeed(random.nextInt(1000) + 1);
+        setDefense(random.nextInt(1000) + 1);
     }
 
-    // 名前を返すゲッターメソッド
+    // 名前のゲッター
     public String getName() {
         return name;
     }
 
-    // 以下、各ステータス値を取得するゲッターメソッド
+    // 名前のセッター
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // 以下、各ステータスのゲッターとセッター
     public int getHp() {
         return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
     public int getMp() {
         return mp;
     }
 
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
     public int getAttack() {
         return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
     public int getSpeed() {
         return speed;
     }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     public int getDefense() {
         return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 }
