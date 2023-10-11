@@ -1,16 +1,15 @@
-/*
-	 	
-	 	下記がコンソールに出力されるように作成してください
-	 	※thisとsetterとgetterとフィールドを使ってください
-	 	
-	  	動物名：ライオン
-		体長：2.1m
-		速度：80km/h
-	 	
-	 */
 package getter_setter;
 
-public class getter_setter {
+/*
+	※thisとsetterとgetterとフィールドを使ってください
+	
+	動物名：ライオン
+    体長：2.1m
+    速度：80km/h
+	
+*/
+
+public class Getter_setter {
 
 	public static void main(String[] args) {
 		// Animalクラスのインスタンス（オブジェクト）を作成
@@ -54,9 +53,9 @@ class Animal {
 	}
 
 	// 名前を設定するメソッド
-	public void setName(String name) {
+	public void setName(String inputName) {
 		// thisを使って、フィールドのnameとメソッドのパラメータnameを区別する
-		this.name = name;
+		this.name = inputName;
 	}
 
 	// 体長を取得するメソッド
@@ -65,9 +64,9 @@ class Animal {
 	}
 
 	// 体長を設定するメソッド
-	public void setLength(double length) {
+	public void setLength(double inputLength) {
 		// thisを使って、フィールドのlengthとメソッドのパラメータlengthを区別する
-		this.length = length;
+		this.length = inputLength;
 	}
 
 	// 速度を取得するメソッド
@@ -76,8 +75,8 @@ class Animal {
 	}
 
 	// 速度を設定するメソッド
-	public void setSpeed(int speed) {
+	public void setSpeed(int inputSpeed) {
 		// thisを使って、フィールドのspeedとメソッドのパラメータspeedを区別する
-		this.speed = speed;
+		this.speed = inputSpeed;
 	}
 }
