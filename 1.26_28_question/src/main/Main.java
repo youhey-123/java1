@@ -116,4 +116,4 @@ public class Main {
 		// Scannerを閉じる
 		scanner.close();
 	}
-}
+}aaaa
