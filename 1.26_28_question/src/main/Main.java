@@ -38,6 +38,7 @@
 
   
   */
+
 package main;
 
 import java.util.HashMap;
@@ -46,53 +47,73 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-    	
-        // 学名を保存するためのマップを初期化。キーは動物の名前、値は学名。
-        Map<String, String> scientificNames = new HashMap<>();
-        
-        // 各動物の名前とその学名をマップに追加
-        scientificNames.put("ライオン", "パンテラ レオ");
-        scientificNames.put("ゾウ", "ロキソドンタ・サイクロティス");
-        scientificNames.put("パンダ", "アイルロポダ・メラノレウカ");
-        scientificNames.put("チンパンジー", "パン・トゥログロディテス");
-        scientificNames.put("シマウマ", "チャップマンシマウマ");
-        scientificNames.put("インコ", "不明");
+	public static void main(String[] args) {
 
-        // コンソールからユーザーの入力を読み取るためのScannerを初期化
-        Scanner scanner = new Scanner(System.in);
-        
-        // ユーザーに入力を促すメッセージを表示
-        System.out.println("コンソールに文字を入力してください");
-        
-        // ユーザーからの入力を1行読み取り
-        String input = scanner.nextLine();
+		// 学名をマッピングするためのマップを初期化
+		Map<String, String> scientificNames = new HashMap<>();
 
-        // 入力された文字列をカンマで分割し、動物の情報を配列として取得
-        String[] animals = input.split(",");
-        
-        for (String animal : animals) {
-        	
-            // 各動物の情報をコロンで分割
-            String[] details = animal.split(":");
-            
-            // 分割された情報から動物の名前、体長、速度を取得
-            String name = details[0];
-            String length = details[1];
-            String speed = details[2];
+		// 各動物の名前と学名をマップに登録
+		scientificNames.put("ライオン", "パンテラ レオ");
+		scientificNames.put("ゾウ", "ロキソドンタ・サイクロティス");
+		scientificNames.put("パンダ", "アイルロポダ・メラノレウカ");
+		scientificNames.put("チンパンジー", "パン・トゥログロディテス");
+		scientificNames.put("シマウマ", "チャップマンシマウマ");
+		scientificNames.put("インコ", "不明");
 
-            // 取得した情報をコンソールに出力
-            System.out.println("動物名：" + name);
-            System.out.println("体長：" + length + "m");
-            System.out.println("速度：" + speed + "km/h");
-            
-            // 学名マップから動物の名前に基づいて学名を取得し、コンソールに出力
-            System.out.println("学名：" + scientificNames.get(name));
-            
-            System.out.println();  // 改行を追加して出力を見やすくする
-        }
+		// コンソール入力のためのScannerを初期化
+		Scanner scanner = new Scanner(System.in);
 
-        // 入力ストリームを閉じる
-        scanner.close();
-    }
+		while (true) {
+			System.out.println("コンソールに文字を入力してください");
+			String input = scanner.nextLine();
+
+			// 入力がnullまたは空の場合、再入力を求める
+			if (input == null) {
+				continue;
+			}
+
+			// 入力文字列をカンマで分割して動物の情報を取得
+			String[] animals = input.split(",");
+			
+			// 入力が有効かを確認するためのフラグ
+			boolean isValid = true; 
+
+			for (String animal : animals) {
+				
+				// 各動物の情報をコロンで分割
+				String[] details = animal.split(":");
+
+				// 期待されるフォーマットと異なる場合、再入力を求める
+				if (details.length < 3) {
+					isValid = false;
+					break;
+				}
+
+				String name = details[0];
+
+				// マップに存在しない動物名の場合、再入力を求める
+				if (!scientificNames.containsKey(name)) {
+					isValid = false;
+					break;
+				}
+
+				// 有効な入力の場合、結果を出力
+				if (isValid) {
+					System.out.println("動物名：" + name);
+					System.out.println("体長：" + details[1] + "m");
+					System.out.println("速度：" + details[2] + "km/h");
+					System.out.println("学名：" + scientificNames.get(name));
+					System.out.println();
+				}
+			}
+
+			// 入力が有効であればループから抜ける
+			if (isValid) {
+				break;
+			}
+		}
+
+		// Scannerを閉じる
+		scanner.close();
+	}
 }
