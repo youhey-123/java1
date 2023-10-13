@@ -67,7 +67,7 @@ public class Main {
 			System.out.println("コンソールに文字を入力してください");
 			String input = scanner.nextLine();
 
-			// 入力がnullまたは空の場合、再入力を求める
+			// 入力がnullの場合、再入力を求める
 			if (input == null) {
 				continue;
 			}
