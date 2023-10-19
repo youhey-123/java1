@@ -39,5 +39,6 @@ public class Person {
     	
         // 問題5：クラスメソッドの中にクラスフィールド「count」を用いて「合計〇〇人です」と出力
         System.out.println("合計" + count + "人です");
+        
     }
 }

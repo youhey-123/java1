@@ -15,5 +15,6 @@ public class Main {
         
         // 問題6：クラスメソッド「printCount」を呼び出す
         Person.printCount();
+        
     }
 }
