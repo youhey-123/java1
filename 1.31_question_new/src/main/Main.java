@@ -10,7 +10,8 @@ public class Main {
         Person person2 = new Person("山田花子", 22, 1.5, 40);
         person2.print();
         
-     
+        // 問題3:System.out.printlnにゲッターメソッドを用い、合人数を出力
+        System.out.println("合計" + Person.getCount() + "人です");
         
         // 問題6：クラスメソッド「printCount」を呼び出す
         Person.printCount();

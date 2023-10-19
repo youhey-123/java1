@@ -29,6 +29,7 @@ public class Person {
         System.out.println("BMIは" + Math.floor(this.bmi()) + "です");
     }
     
+    //問題3用のゲッターメソッド
     public static int getCount() {
         return count;
     }
