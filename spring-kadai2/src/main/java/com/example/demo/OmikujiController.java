@@ -25,6 +25,7 @@ public class OmikujiController {
 		String text1 = "";
 		String text2 = "";
 
+		
 		switch (num) {
 		case 0:
 			omikuji = "大吉";
