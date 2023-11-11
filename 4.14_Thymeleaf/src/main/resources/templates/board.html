@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" <title>掲示板</title>
+</head>
+
+<body>
+<h1>掲示板</h1>
+<form action="/apply" method="post">
+<p>
+<font color="#ff0000" th:text="${errMsg}"></font>
+</p>
+<p>
+<input type="text" name="name" placeholder="名前">
+</p>
+<p>
+今の気分
+<select name="choiceFeeling">
+<option value="◯">◯</option>
+<option value="△">△</option>
+<option value="×">×</option>
+</select>
+</p>
+<p>
+<textarea name="contents" placeholder="書き込み">
+</textarea>
+</p>
+<p>
+<input type="submit" value="投稿する">
+</p>
+</form>
+<hr>
+<table style="width:100%;" border="1">
+<tr>
+<th>日時</th>
+<th>名前</th>
+<th>気分</th>
+<th>書き込み</th>
+</tr>
+<tr th:each="rec:${allContents}">
+<td th:text="${rec.datetime}"></td>
+<td th:text="${rec.name}"></td>
+<td th:text="${rec.feeling}"></td>
+<td th:utext="${rec.contents}"></td>
+</tr>
+</table>
+<a href="/">すべてクリア</a>
+</body>
+
+</html>
